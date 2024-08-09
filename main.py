@@ -1,7 +1,11 @@
+import os
 import openai
+from dotenv import load_dotenv
 
-# Setze deinen API-Schlüssel hier
-openai.api_key = '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'
+load_dotenv("keys.env")
+
+openai.api_key = os.getenv("API_KEY")
+print(openai.api_key)
 
 # Definiere die Anfrage
 def chat(input_text):
